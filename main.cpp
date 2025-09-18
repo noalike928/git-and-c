@@ -17,6 +17,11 @@ auto clearScreen = []()
 
 auto wait = [](const int& sec)
 {
+    if (sec < 0)
+    {
+        throw std::invalid_argument("cannot handle under 0 seconds");
+    }
+
 
     std::this_thread::sleep_for(std::chrono::seconds(sec));
 };
@@ -46,7 +51,7 @@ static const int getUserInput()
       break;
     }
 
-    return userNum;
+    return (userNum <= 0 ? 0 : userNum);
 }
 
 int main()
