@@ -38,10 +38,12 @@ static const int getUserInput()
 
       if (!(std::cin >> userNum))
       {
-        std::cin.ignore();
         std::cin.clear();
 
-        std::cerr << "Can,t Handle None Numerical Types";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+
+
+        std::cerr << "Can,t Handle None Numerical Types" << std::flush;
 
         wait(3);
 
