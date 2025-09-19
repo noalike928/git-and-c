@@ -15,6 +15,7 @@ auto clearScreen = []()
   // didn,t use the ANSII clear screen way because don,t remember it=_=
 };
 
+// shortcut to the long sleep for command
 auto wait = [](const int& sec)
 {
     if (sec < 0)
